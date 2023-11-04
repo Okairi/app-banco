@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -8,6 +9,6 @@ import { BankPageComponent } from './page/bank-page/bank-page.component';
 
 @NgModule({
   declarations: [ListBankComponent, DetailsBankComponent, BankPageComponent],
-  imports: [CommonModule, BankRoutingModule],
+  imports: [CommonModule, BankRoutingModule, HttpClientModule],
 })
 export class BankModule {}
