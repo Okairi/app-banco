@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { BankService } from '../../service/bank.service';
 import { delay, switchMap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-list-bank',
   templateUrl: './list-bank.component.html',
@@ -40,6 +42,15 @@ export class ListBankComponent implements OnInit {
         this.isLoading = false;
         console.log(value);
         this.rutaActiva.navigate(['/bank/details', value.id, display_name]);
+      },
+      error: (error: any) => {
+        this.isLoading = false;
+        Swal.fire({
+          title: 'Error!',
+          text: 'Tenemos problemas en estos momentos',
+          icon: 'error',
+          confirmButtonText: 'Cerrar',
+        });
       },
     });
   }
