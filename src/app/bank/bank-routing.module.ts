@@ -14,7 +14,7 @@ const routes: Routes = [
         component: ListBankComponent,
       },
       {
-        path: 'details/:id',
+        path: 'details/:id/:info',
         component: DetailsBankComponent,
       },
 

@@ -17,7 +17,9 @@ import { delay } from 'rxjs';
 })
 export class DetailsBankComponent implements OnInit {
   isLoading = false;
-
+  title: string = '';
+  resultsTotal: any = [];
+  balance: any;
   constructor(
     private rutaActiva: ActivatedRoute,
     private serviceBank: BankService
@@ -26,7 +28,8 @@ export class DetailsBankComponent implements OnInit {
   ngOnInit(): void {
     this.rutaActiva.params.subscribe({
       next: (val: any) => {
-        console.log(val.id);
+        console.log(val);
+        this.title = val.info;
 
         this.viewBalance(val.id);
       },
@@ -50,18 +53,28 @@ export class DetailsBankComponent implements OnInit {
 
       this.serviceBank
         .listTransactions(id)
-        .pipe(
-          delay(6000) // Agrega un retraso de 5 segundos (por ejemplo)
-        )
+        .pipe(delay(6000))
         .subscribe({
           next: (newVal: any) => {
-            this.handleResponse(newVal, id); // Llamada recursiva para comprobar el nuevo valor
+            this.handleResponse(newVal, id);
           },
         });
     } else {
-      this.isLoading = false; // Se ha obtenido un valor válido, ya no se está cargando
+      this.resultsTotal = val.results;
+      this.isLoading = false;
       console.log(val);
-      // Realizar otras acciones con el valor obtenido si es necesario
+
+      let totalInflow = 0;
+      let totalOutflow = 0;
+
+      val.results.forEach((entry: any) => {
+        if (entry.type === 'INFLOW') {
+          totalInflow += entry.amount;
+        } else if (entry.type === 'OUTFLOW') {
+          totalOutflow += entry.amount;
+        }
+      });
+      this.balance = totalInflow - totalOutflow;
     }
   }
 }

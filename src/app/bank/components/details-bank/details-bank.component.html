@@ -1,2 +1,37 @@
-<div *ngIf="isLoading">Cargando datos...</div>
 <!-- Mostrar los datos o información del banco cuando no esté cargando -->
+
+<h2>{{ title }}</h2>
+
+KPI : {{ balance }}
+
+<br />
+
+<!-- <div class="titles-container">
+  <span>Monto</span>
+  <span>Fecha</span>
+  <span>Tipo</span>
+  <span>Moneda</span>
+</div>
+<div *ngFor="let item of resultsTotal" class="container-details">
+  <span>{{ item.amount | currency }}</span>
+  <span>{{ item.value_date }}</span>
+  <span>{{ item.type }}</span>
+  <span>{{ item.currency }}</span>
+</div> -->
+<br />
+
+<div class="tabla">
+  <div class="fila-header">
+    <div class="celda"><b>Monto</b></div>
+    <div class="celda"><b>Fecha</b></div>
+    <div class="celda"><b>Tipo</b></div>
+    <div class="celda"><b>Moneda</b></div>
+  </div>
+
+  <div *ngFor="let item of resultsTotal" class="fila">
+    <div class="celda">{{ item.amount | currency }}</div>
+    <div class="celda">{{ item.value_date }}</div>
+    <div class="celda">{{ item.type }}</div>
+    <div class="celda">{{ item.currency }}</div>
+  </div>
+</div>

@@ -19,14 +19,15 @@ export class ListBankComponent implements OnInit {
   ngOnInit(): void {
     this.serviceBank.getBanks().subscribe({
       next: (val: any) => {
+        console.log(val);
         this.isLoading = false;
         this.bankList = val.results;
       },
     });
   }
 
-  showBank(name: string) {
-    this.isLoadingCard = true; // Muestra el ícono de carga
+  showBank(name: string, display_name: string) {
+    this.isLoading = true;
 
     const obj = {
       institution: name,
@@ -34,11 +35,12 @@ export class ListBankComponent implements OnInit {
       password: 'full',
     };
 
-    /*   this.serviceBank.createLinksBanks(obj).subscribe({
+    this.serviceBank.createLinksBanks(obj).subscribe({
       next: (value: any) => {
+        this.isLoading = false;
         console.log(value);
-        this.rutaActiva.navigate(['bank/details', value.id]);
+        this.rutaActiva.navigate(['/bank/details', value.id, display_name]);
       },
-    }); */
+    });
   }
 }

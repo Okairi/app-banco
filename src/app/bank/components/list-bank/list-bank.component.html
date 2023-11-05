@@ -7,20 +7,13 @@
   *ngIf="isLoading"
 />
 
-<!-- Mostrar los datos o información del banco cuando no esté cargando -->
 <div *ngIf="!isLoading">
   <div
     *ngFor="let item of bankList"
     class="container"
-    (click)="showBank(item.name)"
+    (click)="showBank(item.name, item.display_name)"
   >
-    <img
-      src="../../../../assets/icons/Infinity-1s-200px.svg"
-      *ngIf="isLoadingCard"
-      class="logo-container"
-      alt=""
-    />
-    <article class="bank" *ngIf="!isLoadingCard">
+    <article class="bank">
       <span> {{ item.display_name }}</span>
       <img [src]="item.logo" class="logo" alt="" />
     </article>
