@@ -1,3 +1,28 @@
 <h2>Lista de Bancos</h2>
 
-<div *ngFor="let item of bankList">{{ item.display_name }}</div>
+<img
+  src="../../../../assets/icons/Infinity-1s-200px.svg"
+  alt=""
+  class="loadin-icon"
+  *ngIf="isLoading"
+/>
+
+<!-- Mostrar los datos o información del banco cuando no esté cargando -->
+<div *ngIf="!isLoading">
+  <div
+    *ngFor="let item of bankList"
+    class="container"
+    (click)="showBank(item.name)"
+  >
+    <img
+      src="../../../../assets/icons/Infinity-1s-200px.svg"
+      *ngIf="isLoadingCard"
+      class="logo-container"
+      alt=""
+    />
+    <article class="bank" *ngIf="!isLoadingCard">
+      <span> {{ item.display_name }}</span>
+      <img [src]="item.logo" class="logo" alt="" />
+    </article>
+  </div>
+</div>

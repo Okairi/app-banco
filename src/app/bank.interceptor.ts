@@ -15,8 +15,6 @@ export class BankInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    console.log(request, next);
-
     const authHeader =
       'Basic MTE4ODJjZTItYWZlNC00Njg4LWJiZmMtOWZkNDAzNTI4M2FjOkt0ejB5OFFiZVlqeTlQZ2d0TmJVdVh0U093TkIxazRrbFUzNGxoV2l1X2JpTjJxR0dYeWV3ZnozdU1zcmdjWHI=';
     const authReq = request.clone({
