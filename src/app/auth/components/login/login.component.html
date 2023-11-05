@@ -1,19 +1,25 @@
 <section class="container-form">
   <h2 style="text-align: center">Bienvenido</h2>
 
-  <form class="container-form__login-form">
+  <form
+    class="container-form__login-form form"
+    [formGroup]="myFormLogin"
+    (ngSubmit)="login()"
+  >
     <input
       type="text"
       class="container-form__input"
       placeholder="Ingrese su correo"
+      formControlName="email"
     />
     <input
       type="password"
       class="container-form__input"
       placeholder="Ingrese su contraseña"
+      formControlName="password"
     />
 
-    <button class="container-form__button">Ingresar</button>
+    <button type="submit" class="container-form__button">Ingresar</button>
 
     <span class="container-form__redirect">
       ¿Todavía no tienes cuenta?

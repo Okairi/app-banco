@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "banco-e6e96": {
+      "hosting": {
+        "app-banco": [
+          "banco-e6e96"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "banco-e6e96"
+  }
+}
