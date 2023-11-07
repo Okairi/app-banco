@@ -22,9 +22,7 @@ export class RegisterComponent implements OnInit {
       password: ['', Validators.required],
     });
   }
-  ngOnInit(): void {
-    console.log(this.myForm.value);
-  }
+  ngOnInit(): void {}
   submit() {
     this.service
       .register(this.myForm.value)

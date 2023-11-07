@@ -1,12 +1,19 @@
 <div class="header">
   <span class="home" routerLink="bank/"> Home </span>
   <div class="container-info">
-    <span>Alessandro</span>
-    <img
-      src="../../../../assets/icons/Individual-modified.svg"
-      alt=""
-      class="icon"
-    />
+    <span>{{ userNameLogin || "No UserName" }}</span>
+
+    <div class="container-img">
+      <img
+        src="../../../../assets/icons/Individual-modified.svg"
+        alt=""
+        class="icon"
+        (click)="toggleLogoutButton()"
+      />
+      <div class="cerrar-sesion" *ngIf="showLogout">
+        <span (click)="logout()">Cerrar Sesión</span>
+      </div>
+    </div>
   </div>
 </div>
 

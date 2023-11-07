@@ -26,7 +26,11 @@ export class LoginComponent {
   login() {
     this.service
       .login(this.myFormLogin.value)
-      .then(() => {
+      .then((x: any) => {
+        this.service.objUser = x;
+
+        localStorage.setItem('token', x.user.accessToken);
+        localStorage.setItem('user', x.user.email);
         Swal.fire({
           position: 'top-end',
           icon: 'success',
@@ -34,6 +38,7 @@ export class LoginComponent {
           showConfirmButton: false,
           timer: 1500,
         });
+
         this.ruta.navigate(['bank/']);
       })
       .catch(() => {

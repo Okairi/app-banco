@@ -35,3 +35,17 @@
   cursor: pointer;
   font-family: "Open Sans", sans-serif;
 }
+.container-img {
+  position: relative;
+}
+
+.cerrar-sesion {
+  position: absolute;
+  top: 54px;
+  background-color: #3838ff;
+  color: #fff;
+  width: 100px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}

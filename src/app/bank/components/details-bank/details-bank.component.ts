@@ -28,7 +28,6 @@ export class DetailsBankComponent implements OnInit {
   ngOnInit(): void {
     this.rutaActiva.params.subscribe({
       next: (val: any) => {
-        console.log(val);
         this.title = val.info;
 
         this.viewBalance(val.id);
@@ -47,10 +46,6 @@ export class DetailsBankComponent implements OnInit {
 
   handleResponse(val: any, id: string) {
     if (val.count < 1) {
-      console.log(
-        'El valor es menor a 1. Esperando antes de realizar una nueva solicitud...'
-      );
-
       this.serviceBank
         .listTransactions(id)
         .pipe(delay(6000))
@@ -62,7 +57,6 @@ export class DetailsBankComponent implements OnInit {
     } else {
       this.resultsTotal = val.results;
       this.isLoading = false;
-      console.log(val);
 
       let totalInflow = 0;
       let totalOutflow = 0;

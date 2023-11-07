@@ -21,7 +21,6 @@ export class ListBankComponent implements OnInit {
   ngOnInit(): void {
     this.serviceBank.getBanks().subscribe({
       next: (val: any) => {
-        console.log(val);
         this.isLoading = false;
         this.bankList = val.results;
       },
@@ -40,7 +39,7 @@ export class ListBankComponent implements OnInit {
     this.serviceBank.createLinksBanks(obj).subscribe({
       next: (value: any) => {
         this.isLoading = false;
-        console.log(value);
+
         this.rutaActiva.navigate(['/bank/details', value.id, display_name]);
       },
       error: (error: any) => {
