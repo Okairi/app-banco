@@ -41,13 +41,24 @@ export class LoginComponent {
 
         this.ruta.navigate(['bank/']);
       })
-      .catch(() => {
-        Swal.fire({
-          title: 'Error!',
-          text: 'Error al iniciar sesion, intento más tarde',
-          icon: 'error',
-          confirmButtonText: 'Cerrar',
-        });
+      .catch((err) => {
+        console.log(err.toString().split(' '));
+        let erroMess = err.toString().split(' ')[3];
+
+        if (erroMess === '(auth/invalid-login-credentials).') {
+          this.errorShow('El usuario no está registrado.');
+          console.log(err.message);
+        } else {
+          this.errorShow('Error en el sistema, intentelo en unos minutos');
+        }
       });
+  }
+  errorShow(textShow: string) {
+    Swal.fire({
+      title: 'Error!',
+      text: textShow,
+      icon: 'error',
+      confirmButtonText: 'Cerrar',
+    });
   }
 }

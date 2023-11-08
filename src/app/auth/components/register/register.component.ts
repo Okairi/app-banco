@@ -37,12 +37,26 @@ export class RegisterComponent implements OnInit {
         this.ruta.navigate(['auth/login']);
       })
       .catch((err) => {
-        Swal.fire({
-          title: 'Error!',
-          text: 'Error al crear el usuario, intento más tarde',
-          icon: 'error',
-          confirmButtonText: 'Cerrar',
-        });
+        console.log(err.toString().split(' '));
+        let erroMess = err.toString().split(' ')[3];
+
+        if (erroMess === '(auth/email-already-in-use).') {
+          this.errorShow('El correo ya está registrado');
+          console.log(err.message);
+        } else if (erroMess === '(auth/invalid-email).') {
+          this.errorShow('El correo ingresado no es válido');
+        } else {
+          this.errorShow('Error en el sistema, intentelo en unos minutos');
+        }
       });
+  }
+
+  errorShow(textShow: string) {
+    Swal.fire({
+      title: 'Error!',
+      text: textShow,
+      icon: 'error',
+      confirmButtonText: 'Cerrar',
+    });
   }
 }
