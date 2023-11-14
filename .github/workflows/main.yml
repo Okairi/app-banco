@@ -20,13 +20,16 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '14'
+        node-version: '16'  # Actualizado a una versión compatible con Angular CLI
+
+    - name: Install Angular CLI
+      run: npm install -g @angular/cli
 
     - name: Install dependencies
-      run: npm install  # Ajusta esto según tus necesidades
+      run: npm install
 
     - name: Build
-      run: npm run build  # Ajusta esto según tus necesidades
+      run: npm run build
 
   deploy:
     runs-on: ubuntu-latest
@@ -36,6 +39,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         deploy_key: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build  # Ajusta esto según la ubicación de tus archivos estáticos
-
-# Puedes agregar más jobs o steps según tus necesidades
+        publish_dir: ./build
