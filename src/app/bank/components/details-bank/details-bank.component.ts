@@ -55,6 +55,7 @@ export class DetailsBankComponent implements OnInit {
           },
         });
     } else {
+      /* ci */
       this.resultsTotal = val.results;
       this.isLoading = false;
 
