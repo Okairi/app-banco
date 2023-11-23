@@ -1,0 +1,95 @@
+{
+  "configVersion": 1,
+  "timestamp": 1700774054579,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/37.b26a23a25508904d.js",
+        "/519.e7f9d87b73c15286.js",
+        "/844.0a1d428abc53e023.js",
+        "/favicon.ico",
+        "/index.html",
+        "/main.12bbaf151b2b95ec.js",
+        "/manifest.webmanifest",
+        "/polyfills.93095bb7c6683dd4.js",
+        "/runtime.44d70d307fe2745a.js",
+        "/styles.ef46db3751d8e999.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/icons/Individual-modified.svg",
+        "/assets/icons/Infinity-1s-200px.svg",
+        "/assets/icons/exit-modified.svg",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/icons/no-image-svgrepo-com.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/37.b26a23a25508904d.js": "6e555dd99ce6734b6fbfe53c3c71f4734ec809f6",
+    "/519.e7f9d87b73c15286.js": "becb111061fa93229c27359929309637ed87883c",
+    "/844.0a1d428abc53e023.js": "ed45a2fc50f7ea89a38a74e55f8427c9234a6ad7",
+    "/assets/icons/Individual-modified.svg": "767e7e1669603eb187f330e19a7f9f80d5035f14",
+    "/assets/icons/Infinity-1s-200px.svg": "d8730bc5e86e87535825e9f958d5c18d7643cd98",
+    "/assets/icons/exit-modified.svg": "b5549c6f0131d0440af1b775d8f2b609dedc616d",
+    "/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
+    "/assets/icons/icon-144x144.png": "96a0d629765c1bc85d9263c6bc83094ca776d267",
+    "/assets/icons/icon-152x152.png": "b1fbbee3902eb96a7658e3bb006f31f78ca5a44c",
+    "/assets/icons/icon-192x192.png": "e4211163bf0911688fbfb80278d8ff4d2f77691d",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
+    "/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
+    "/assets/icons/no-image-svgrepo-com.svg": "8b14063c34c616a87d2aee7efeb388324068c69a",
+    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/index.html": "91ae11c5a1608d49177dc48ace3f0a66d839bc61",
+    "/main.12bbaf151b2b95ec.js": "648b60bae18b9e5aefcbe229ae86c010081eaa2c",
+    "/manifest.webmanifest": "5cac2edd2c45d962dda261edb47817a79cf14b6d",
+    "/polyfills.93095bb7c6683dd4.js": "d8cf9e0505302a7cbbf4dc065de72cd0b89ea9b1",
+    "/runtime.44d70d307fe2745a.js": "81c1bc63b3c43de612e7a659c7ded2733c72c4a4",
+    "/styles.ef46db3751d8e999.css": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
